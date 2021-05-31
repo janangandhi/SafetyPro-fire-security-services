@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/sosafe.iml" filepath="$PROJECT_DIR$/sosafe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SafetyPro.iml" filepath="$PROJECT_DIR$/SafetyPro.iml" />
     </modules>
   </component>
 </project>
