@@ -10,7 +10,7 @@ import sensor.SensorType;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class SafetyProService {
+public abstract class SafetyProService implements SensorPublisher {
 
     List<Sensor> sensorList;
     User serviceUser;
@@ -33,7 +33,6 @@ public abstract class SafetyProService {
         if (sensorRemoved)
             System.out.println("Sensor " + id + " removed ");
     }
-
 
     public Double getTotalCost() {
         Double totalCost = 0.0;

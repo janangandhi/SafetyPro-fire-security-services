@@ -1,9 +1,10 @@
 package view;
 
+import model.ServiceBill;
 import model.User;
 import service.FireService;
-import service.PanelMediator;
 import service.SecurityService;
+import service.ServicePanelMediator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,8 +18,10 @@ public class CardPanel extends JPanel {
     public CardPanel(User user) {
         cardLayout = new CardLayout();
         setLayout(cardLayout);
-        securityServicesPanel = new SecurityServicesPanel(this, new PanelMediator(new SecurityService(user)));
-        fireServicesPanel = new FireServicesPanel(this, new PanelMediator(new FireService(user)));
+        securityServicesPanel = new SecurityServicesPanel(this, new ServicePanelMediator(new SecurityService(user),
+                new ServiceBill.ServiceBillBuilder()));
+        fireServicesPanel = new FireServicesPanel(this, new ServicePanelMediator(new FireService(user),
+                new ServiceBill.ServiceBillBuilder()));
 
         add(new SelectionPagePanel(this).getMainPanel(), "mainPanel");
         add(fireServicesPanel.generatePanel(), "firePanel");

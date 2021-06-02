@@ -15,7 +15,7 @@ public class ServiceBill {
     private final Double sensorCost;
 
 
-    public ServiceBill(ServiceBillBuilder builder) {
+    public ServiceBill(SafetyProServiceBillBuilder builder) {
         this.invoiceNumber = builder.invoiceNumber;
         this.accountName = builder.accountName;
         this.billableAddress = builder.billableAddress;
@@ -54,14 +54,7 @@ public class ServiceBill {
         return serviceType;
     }
 
-    public static class ServiceBillBuilder {
-        private final String invoiceNumber;
-        private String accountName;
-        private String billableAddress;
-        private int numberOfSensors;
-        private Double sensorCost;
-        private String serviceType;
-        private Double totalCost;
+    public static class ServiceBillBuilder extends SafetyProServiceBillBuilder {
 
         public ServiceBillBuilder() {
             this.invoiceNumber = UUID.randomUUID().toString();

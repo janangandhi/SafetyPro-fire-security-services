@@ -1,7 +1,7 @@
 package view;
 
 import model.ServiceConfiguration;
-import service.PanelMediator;
+import service.ServicePanelMediator;
 import util.Constants;
 import util.CustomOutputStream;
 
@@ -39,11 +39,11 @@ public class FireServicesPanel {
     private JCheckBox office10CheckBox;
     private JCheckBox reception11CheckBox;
     private JCheckBox reception12CheckBox;
-    private final PanelMediator mediator;
+    private final ServicePanelMediator mediator;
     private List<JCheckBox> sensorCheckBoxList;
     private ServiceConfiguration serviceConfiguration;
 
-    public FireServicesPanel(CardPanel cardPanel, PanelMediator mediator) {
+    public FireServicesPanel(CardPanel cardPanel, ServicePanelMediator mediator) {
         $$$setupUI$$$();
         this.mediator = mediator;
         addCheckBoxListeners();

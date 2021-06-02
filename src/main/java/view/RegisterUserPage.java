@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Arrays;
 
-public class RegisterUserPage extends JFrame {
+public class RegisterUserPage {
     private JFrame frame;
     private JLabel titleLabel;
     private JLabel nameLabel;

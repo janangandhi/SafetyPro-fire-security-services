@@ -1,7 +1,7 @@
 package view;
 
 import model.TaskSchedule;
-import service.PanelMediator;
+import service.ServicePanelMediator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,10 +16,10 @@ public class SchedulingPanel {
     private JTextField toMinuteField;
     private JButton scheduleButton;
 
-    private final PanelMediator mediator;
+    private final ServicePanelMediator mediator;
     private JFrame frame;
 
-    public SchedulingPanel(PanelMediator mediator) {
+    public SchedulingPanel(ServicePanelMediator mediator) {
         $$$setupUI$$$();
         this.mediator = mediator;
         scheduleButton.addActionListener(e -> {

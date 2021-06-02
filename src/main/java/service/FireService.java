@@ -27,10 +27,4 @@ public class FireService extends SafetyProService {
         return ServiceType.FIRE_SERVICE;
     }
 
-
-    public User getUser() {
-        return serviceUser;
-    }
-
-
 }

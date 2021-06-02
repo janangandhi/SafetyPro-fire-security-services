@@ -1,6 +1,7 @@
 package service;
 
 import alert.AlertFactory;
+import model.SafetyProServiceBillBuilder;
 import model.ServiceBill;
 import model.TaskSchedule;
 import sensor.SensorType;
@@ -16,14 +17,16 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class PanelMediator {
+public class ServicePanelMediator {
 
     private final SafetyProService service;
     private boolean isServiceActivated;
+    private SafetyProServiceBillBuilder builder;
 
-    public PanelMediator(SafetyProService service) {
+    public ServicePanelMediator(SafetyProService service, SafetyProServiceBillBuilder builder) {
         this.service = service;
         this.isServiceActivated = false;
+        this.builder = builder;
     }
 
     public void onSensorSelected(int buttonId, SensorType type, boolean isSensorSelected) {
@@ -65,8 +68,7 @@ public class PanelMediator {
 
     public void displayBillPanel() {
 
-        ServiceBill bill = new ServiceBill.ServiceBillBuilder()
-                .withAccountName(service.getServiceUser().getName())
+        ServiceBill bill = builder.withAccountName(service.getServiceUser().getName())
                 .withBillableAddress(service.getServiceUser().getAddress())
                 .withSensorCount(service.getSensorList().size())
                 .havingSensorCost(service.getTotalCost())

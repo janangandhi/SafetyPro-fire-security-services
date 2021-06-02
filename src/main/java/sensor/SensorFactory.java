@@ -1,13 +1,11 @@
 package sensor;
 
-public final class SensorFactory {
+public final class SensorFactory implements SafetyProSensorFactory {
 
-    static SensorFactory sensorFactoryInstance = new SensorFactory();
+    private static final SensorFactory sensorFactoryInstance = new SensorFactory();
 
     private SensorFactory() {
     }
-
-    ;
 
     public static SensorFactory getInstance() {
         return sensorFactoryInstance;
